@@ -10,11 +10,36 @@ nav {
     padding: 5px 5px 5px 5px;
 }
 
-.card-body {
-    background-color: rgb(93, 194, 253);
+main {
+    
 }
 
-section {
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.current-title-container {
     display: flex;
+    align-items:center;
+    justify-content: center;
+    border-color:  black ;
+    height:40vh;
+    background-color:rgb(201, 61, 61);
+}
+
+.card-block {
+    background-color: rgb(93, 194, 253);
+    height: 30vh;
+}
+
+.all-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
+    margin-left: 100px;
+    gap: 20px;
+    width:75%;
+    
 }
