@@ -24,28 +24,28 @@
     <div class="mb-3 col-2">
       <label for="exampleInputSearch1" class="form-label"></label>
       <p>Search for a city:</p>
-      <input type="search" class="form-control" id="search">
+      <input type="search" class="form-control" id="cityname">
     </div>
     <button type="submit" class="btn btn-primary">Search</button>
+  </form>
     <div class="col-sm-8 p-0">
-      
+      <!-- current weather conditions -->
       <div id="current-weather-container" class="row d-block">
-        
+          <!-- current weather title -->
           <div class="current-title-container">
               <h2 id="current-title" class="current-title d-inline"></h2>
               <img id="current-weather-icon" class="d-inline" src="" alt="">
           </div>
-          
+          <!-- current weather temperature -->
           <p class="current-temperature" id="current-temperature"></p>
-          
+          <!-- current weather humidity -->
           <p class="current-humidity" id="current-humidity"></p>
-         
+          <!-- current weather wind speed -->
           <p class="current-wind-speed" id="current-wind-speed"></p>
-          
+          <!-- current weather uv index -->
           <p class="current-uv-index" id="current-uv-index"></p>
           <p class="current-number rounded" id="current-number"></p>
       </div>
-  </form>
 
   <div id="search-history-container" class="row m-0 search-history-container"></div>
 
