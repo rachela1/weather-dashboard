@@ -1,11 +1,11 @@
 var apiKey = "6742848ffbdd73f2b4abfa38fd707bd8";
-var queryUrl = 'https://api.openweathermap.org/data/2.5/weather?' + city + '&appid=' + apiKey + "&units=imperial";
-var city= [];
+var queryUrl = 'https://api.openweathermap.org/data/2.5/weather?appid=' + apiKey;
+var city;
 var searchCity = document.querySelector('#searchButton');
 
 var getWeatherByCityName = async (city) => {
     var endpoint = queryUrl + '&q=' + city;
-    var response= await fetch(endpoint);
+    var response = await fetch(endpoint);
     var weather = await response.json();
     return weather;
 }
