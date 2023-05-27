@@ -1,30 +1,23 @@
-var APIKey = "6742848ffbdd73f2b4abfa38fd707bd8"
-var city;
-//var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=" + "APIke";
-// fetch(var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=" + "742848ffbdd73f2b4abfa38fd707bd8";)
+var apiKey = "6742848ffbdd73f2b4abfa38fd707bd8";
+var queryUrl = 'https://api.openweathermap.org/data/2.5/weather?' + city + '&appid=' + apiKey + "&units=imperial";
+var city= [];
+var searchCity = document.querySelector('#searchButton');
 
-var searchSubmitHandler = function (event) {
-    event.preventDefault();
-    var cityName = $("#cityName").val().trim();
-    if (cityName) {
-        getCurrentWeather(cityName);
-        $("#cityName").val("");
-    } else {
-        alert("Please enter a name of a city.");
+var getWeatherByCityName = async (city) => {
+    var endpoint = queryUrl + '&q=' + city;
+    var response= await fetch(endpoint);
+    var weather = await response.json();
+    return weather;
+}
+
+
+searchCity.addEventListener('click', async (e) => {
+    e.preventDefault();
+    console.log(e);
+    if(e.pointerId === 1) {
+        var weather = await getWeatherByCityName(searchCity.value);
+         console.log(weather);
     }
-};
+});
 
-var getCurrentWeather = function (city) {
-    var APIUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + "742848ffbdd73f2b4abfa38fd707bd8";
-    fetch(APIUrl)
-        .then(function (response) {
-            if (response.ok) {
-                response.json().then(function (data) {
-                    displayWeather(data);
-                });
-            } else {
-                alert("error:" + response.statusText);
-            }
-        })
-};
 
